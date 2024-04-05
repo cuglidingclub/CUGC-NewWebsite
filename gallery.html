@@ -1363,10 +1363,10 @@ function generateThumbnails() {
             const folderImages = galleryData[folder];
 
             // Get the thumbnail image path
-            const thumbnailPath = `gallery/${folder}/thumb.png`;
+            const thumbnailPath = `assets/img/gallery/${folder}/thumb.png`;
 
             // Construct paths for all images in the folder, including the thumbnail
-            const imagesPaths = folderImages.map(image => `gallery/${folder}/${image}`);
+            const imagesPaths = folderImages.map(image => `assets/img/gallery/${folder}/${image}`);
 
             // Create thumbnail container
             const colDiv = document.createElement("div");
@@ -1414,7 +1414,7 @@ function displayImages(folder) {
     images.forEach((image, index) => {
         const img = document.createElement("img");
         img.classList.add("img-fluid", "my-2");
-        img.src = `gallery/${folder}/${image}`;
+        img.src = `assets/img/gallery/${folder}/${image}`;
         img.alt = folder;
 
         galleryImages.appendChild(img);
@@ -1468,7 +1468,7 @@ function displayImages(folder) {
     if (closeButton) {
         closeButton.addEventListener("click", closeModal);
     }
-    
+
 
 // Call generateThumbnails function when the page is loaded
 window.onload = generateThumbnails;
