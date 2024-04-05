@@ -1366,7 +1366,7 @@ function generateThumbnails() {
             const thumbnailPath = `gallery/${folder}/thumb.png`;
 
             // Construct paths for all images in the folder, including the thumbnail
-            const imagesPaths = folderImages.map(image => `/gallery/${folder}/${image}`);
+            const imagesPaths = folderImages.map(image => `gallery/${folder}/${image}`);
 
             // Create thumbnail container
             const colDiv = document.createElement("div");
@@ -1414,7 +1414,7 @@ function displayImages(folder) {
     images.forEach((image, index) => {
         const img = document.createElement("img");
         img.classList.add("img-fluid", "my-2");
-        img.src = `/gallery/${folder}/${image}`;
+        img.src = `gallery/${folder}/${image}`;
         img.alt = folder;
 
         galleryImages.appendChild(img);
