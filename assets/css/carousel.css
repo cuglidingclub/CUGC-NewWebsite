@@ -1,0 +1,103 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
+
+.heading {
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.main-caption {
+  margin-bottom: 1.5rem;
+}
+
+.blueact {
+  background-color: #0275d8;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+.navbar-nav a {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+
+.nav-item {
+  padding: 0.1rem;
+}
+
+.navbar-nav .show .dropdown-toggle {
+  background-color: #0275d8;
+}
+
+.profile > img {
+  width: 100%;
+}
+
+.dropdown-item:active {
+  color: #1d1e1f !important;
+  background-color: #f7f7f9 !important;
+}
+
+.bottom-rounded {
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.sidebar-frame {
+  padding-left: 1rem;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+
+.carousel {
+  margin-bottom: 2rem;
+}
+
+/* Declare heights because of positioning of img element */
+
+.carousel-item {
+  background-color: #777;
+}
+
+.carousel-item > img {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100%;
+  vertical-align: middle;
+}
+
+.carousel-item .container {
+  position: static;
+}
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 2rem 0;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+img {
+  text-align: center;
+}
+
+.gal-prev, .gal-next {
+  display: none;
+}
+
