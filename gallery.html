@@ -78,465 +78,1402 @@
       $(this).addClass('blueact rounded');
     }
   });
-    </script></nav><div class="container">
-    <h1 class="heading">Gallery</h1>
-    <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/trial-flights/thumb.png" />
-                <div class="card-body"><button id="start-trial-flights" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-trial-flights"> Trial Flights </button></div>
+    </script></nav><style>
+    /* CSS for the displayed image */
+    .displayed {
+        display: block; /* Show the image */
+        max-width: 100%; /* Ensure the image does not exceed the modal width */
+        max-height: 80vh; /* Limit the image height to 80% of the viewport height */
+        margin: 0 auto; /* Center the image horizontally */
+    }
+
+    /* CSS for the modal */
+.modal-dialog {
+    max-width: 90%; /* Adjust the maximum width as needed */
+    margin: 30px auto; /* Center the modal vertically and horizontally */
+}
+
+.modal-content {
+    height: 80vh; /* Set the height of the modal content */
+}
+
+.modal-body {
+    overflow-y: auto; /* Enable vertical scrolling if the content exceeds the modal height */
+}
+
+/* CSS for the images */
+#galleryImages img {
+    max-width: 100%; /* Ensure the images don't exceed the modal width */
+    max-height: 100%; /* Ensure the images don't exceed the modal height */
+    object-fit: contain; /* Fit the images within the container while preserving aspect ratio */
+}
+</style>
+
+<h1 class="heading">Gallery</h1>
+<div class="row" id="galleryRow">
+    <!-- Thumbnails will be dynamically added here -->
+</div>
+</div>
+
+<!-- Modal for displaying images -->
+<div class="modal fade" id="galleryModal" tabindex="-1" role="dialog" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="galleryModalLabel">Gallery</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </div>
-        <div id="gallery-trial-flights" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">Trial Flights</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
+            <div class="modal-body" id="galleryImages">
+                <!-- Images will be dynamically added here -->
             </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2020-sutton-bank/thumb.png" />
-                <div class="card-body"><button id="start-exp-2020-sutton-bank" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2020-sutton-bank"> 2020 Sutton Bank Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2020-sutton-bank" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2020 Sutton Bank Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2019-portmoak/thumb.png" />
-                <div class="card-body"><button id="start-exp-2019-portmoak" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2019-portmoak"> 2019 Portmoak Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2019-portmoak" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2019 Portmoak Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/general-2019/thumb.png" />
-                <div class="card-body"><button id="start-general-2019" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-general-2019"> 2019 General Flying </button></div>
-            </div>
-        </div>
-        <div id="gallery-general-2019" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2019 General Flying</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/var-2019/thumb.png" />
-                <div class="card-body"><button id="start-var-2019" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-var-2019"> 2019 Varsity </button></div>
-            </div>
-        </div>
-        <div id="gallery-var-2019" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2019 Varsity</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2019-long-mynd/thumb.png" />
-                <div class="card-body"><button id="start-exp-2019-long-mynd" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2019-long-mynd"> 2019 Long Mynd Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2019-long-mynd" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2019 Long Mynd Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/general-2018/thumb.png" />
-                <div class="card-body"><button id="start-general-2018" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-general-2018"> 2018 General Flying </button></div>
-            </div>
-        </div>
-        <div id="gallery-general-2018" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2018 General Flying</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2018-portmoak/thumb.png" />
-                <div class="card-body"><button id="start-exp-2018-portmoak" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2018-portmoak"> 2018 Portmoak Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2018-portmoak" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2018 Portmoak Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2018-long-mynd/thumb.png" />
-                <div class="card-body"><button id="start-exp-2018-long-mynd" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2018-long-mynd"> 2018 Long Mynd Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2018-long-mynd" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2018 Long Mynd Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/general-2017/thumb.png" />
-                <div class="card-body"><button id="start-general-2017" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-general-2017"> 2017 General Flying </button></div>
-            </div>
-        </div>
-        <div id="gallery-general-2017" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2017 General Flying</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2017-sutton-bank/thumb.png" />
-                <div class="card-body"><button id="start-exp-2017-sutton-bank" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2017-sutton-bank"> 2017 Sutton Bank Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2017-sutton-bank" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2017 Sutton Bank Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2017-eden/thumb.png" />
-                <div class="card-body"><button id="start-exp-2017-eden" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2017-eden"> 2017 Eden Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2017-eden" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2017 Eden Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2017-portmoak/thumb.png" />
-                <div class="card-body"><button id="start-exp-2017-portmoak" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2017-portmoak"> 2017 Portmoak Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2017-portmoak" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2017 Portmoak Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/general-2016/thumb.png" />
-                <div class="card-body"><button id="start-general-2016" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-general-2016"> 2016 General Flying </button></div>
-            </div>
-        </div>
-        <div id="gallery-general-2016" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2016 General Flying</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2013-portmoak/thumb.png" />
-                <div class="card-body"><button id="start-exp-2013-portmoak" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2013-portmoak"> 2013 Portmoak Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2013-portmoak" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2013 Portmoak Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2013-latrigg/thumb.png" />
-                <div class="card-body"><button id="start-exp-2013-latrigg" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2013-latrigg"> 2013 Latrigg Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2013-latrigg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2013 Latrigg Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2013-eden/thumb.png" />
-                <div class="card-body"><button id="start-exp-2013-eden" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2013-eden"> 2013 Eden Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2013-eden" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2013 Eden Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2011-sutton-bank/thumb.png" />
-                <div class="card-body"><button id="start-exp-2011-sutton-bank" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2011-sutton-bank"> 2011 Sutton Bank Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2011-sutton-bank" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2011 Sutton Bank Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2011-eden/thumb.png" />
-                <div class="card-body"><button id="start-exp-2011-eden" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2011-eden"> 2011 Eden Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2011-eden" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2011 Eden Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2009-nympsfield/thumb.png" />
-                <div class="card-body"><button id="start-exp-2009-nympsfield" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2009-nympsfield"> 2009 Nympsfield Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2009-nympsfield" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2009 Nympsfield Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/var-2007/thumb.png" />
-                <div class="card-body"><button id="start-var-2007" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-var-2007"> Varsity Match 2007 </button></div>
-            </div>
-        </div>
-        <div id="gallery-var-2007" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">Varsity Match 2007</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2007-long-mynd/thumb.png" />
-                <div class="card-body"><button id="start-exp-2007-long-mynd" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2007-long-mynd"> 2007 Long Mynd Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2007-long-mynd" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2007 Long Mynd Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2005-long-mynd/thumb.png" />
-                <div class="card-body"><button id="start-exp-2005-long-mynd" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2005-long-mynd"> 2005 Long Mynd Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2005-long-mynd" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2005 Long Mynd Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2004-long-mynd/thumb.png" />
-                <div class="card-body"><button id="start-exp-2004-long-mynd" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2004-long-mynd"> 2004 Long Mynd Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2004-long-mynd" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2004 Long Mynd Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2003-portmoak/thumb.png" />
-                <div class="card-body"><button id="start-exp-2003-portmoak" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2003-portmoak"> 2003 Portmoak Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2003-portmoak" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2003 Portmoak Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xs-12 mb-4">
-            <div class="card profile"><img class="card-img-top w-100 d-block card-img-top" src="assets/img//gallery/exp-2002-portmoak/thumb.png" />
-                <div class="card-body"><button id="start-exp-2002-portmoak" class="btn btn-primary gallery-start" type="button" data-toggle="modal" data-target="#gallery-exp-2002-portmoak"> 2002 Portmoak Expedition </button></div>
-            </div>
-        </div>
-        <div id="gallery-exp-2002-portmoak" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 id="gallery-modal-label" class="modal-title">2002 Portmoak Expedition</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    </div><img class="img-fluid gal-show" src alt="Image loading ..." /><img class="img-fluid gal-prev" src alt /><img class="img-fluid gal-next" src alt />
-                    <div class="modal-footer"><button class="btn btn-primary mr-auto gallery-prev" type="button">Previous</button><button class="btn btn-primary gallery-next" type="button">Next</button></div>
-                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="previousButton">Previous</button>
+                <button type="button" class="btn btn-primary" id="nextButton">Next</button>
             </div>
         </div>
     </div>
-    <hr class="featurette-divider" />
-    <footer>
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>Copyright © 2024 Cambridge University Gliding Club. All rights reserved.</p>
-    </footer>
-</div>
+</div><script>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+galleryData = {
+    "general-2018": [
+        "DSC08171.jpg",
+        "DSC08157_1.jpg",
+        "DSC08174.jpg",
+        "DSC08216.jpg",
+        "DSC08188.jpg",
+        "DSC08177.jpg",
+        "DSC08201.jpg",
+        "DSC08230.jpg",
+        "DSC08146.jpg",
+        "DSC08186.jpg",
+        "DSC08193.jpg",
+        "DSC08222.jpg",
+        "DSC08197.jpg",
+        "DSC08141.jpg",
+        "thumb.png",
+        "DSC08208.jpg"
+    ],
+    "general-2016": [
+        "WP_20160504_17_31_58_Pro.jpg",
+        "WP_20160514_16_35_16_Pro.jpg",
+        "DSC00041_2.jpg",
+        "WP_20160402_12_02_05_Pro.jpg",
+        "WP_20160901_19_41_40_Pro.jpg",
+        "WP_20160514_16_49_04_Pro.jpg",
+        "IMG-20160801-WA0004.jpg",
+        "DSC00041_Small.jpg",
+        "GRL from the north.jpg",
+        "WP_20160901_19_30_33_Pro.jpg",
+        "WP_20160323_11_48_33_Pro.jpg",
+        "WP_20161009_17_13_26_Pro.jpg",
+        "WP_20160718_21_16_57_Pro.jpg",
+        "DSC00026_Small.jpg",
+        "WP_20160718_20_30_30_Pro.jpg",
+        "DSC00026.jpg",
+        "WP_20160522_16_22_09_Pro.jpg",
+        "DSC00042.jpg",
+        "WP_20160707_17_38_39_Pro.jpg",
+        "DSC00041.jpg",
+        "DSC00055.jpg",
+        "Small.jpg",
+        "thumb.png"
+    ],
+    "general-2017": [
+        "DSC07693.jpg",
+        "17155393_10210718169504128_3457191301397511870_n.jpg",
+        "WP_20170713_17_48_22_Pro.jpg",
+        "IMG_20170315_172855.jpg",
+        "WP_20170516_21_13_09_Pro.jpg",
+        "DSC07727.jpg",
+        "IMG_20170902_154421.jpg",
+        "WP_20170518_10_55_16_Pro.jpg",
+        "WP_20170528_12_10_16_Pro.jpg",
+        "DSC07723.jpg",
+        "IMG_20170902_160752.jpg",
+        "IMG_20170902_160624.jpg",
+        "WP_20170528_12_10_20_Pro.jpg",
+        "DSC_0020.jpg",
+        "DSC07734.jpg",
+        "DSC_0154.jpg",
+        "DSC07697.jpg",
+        "DSC_0906.jpg",
+        "DSC07746.jpg",
+        "IMG_20170902_154137.jpg",
+        "IMG_20170325_120052.jpg",
+        "DSC07786.jpg",
+        "WP_20170712_14_33_15_Pro.jpg",
+        "IMG_20170902_161229.jpg",
+        "IMG_20170902_111519.jpg",
+        "DSC07794.jpg",
+        "IMG_20170325_103511.jpg",
+        "DSC06703.jpg",
+        "IMG_20170325_103505_01.jpg",
+        "DSC07773.jpg",
+        "WP_20170528_12_15_11_Pro.jpg",
+        "WP_20170712_12_15_59_Pro.jpg",
+        "WP_20170528_12_29_23_Rich.jpg",
+        "DSC07758.jpg",
+        "DSC07764.jpg",
+        "WP_20170530_18_49_00_Pro.jpg",
+        "WP_20170712_12_17_16_Pro.jpg",
+        "WP_20170712_12_15_51_Pro.jpg",
+        "IMG_0331.jpg",
+        "DSC_1142.jpg",
+        "WP_20170530_20_23_50_Pro.jpg",
+        "IMG_20170902_160614.jpg",
+        "DSC_1125.jpg",
+        "WP_20170713_17_47_25_Pro.jpg",
+        "DSC_0158.jpg",
+        "IMG_20170902_154149.jpg",
+        "IMG_20170902_154439.jpg",
+        "IMG_20170315_171402.jpg",
+        "DSC07706.jpg",
+        "DSC_1133.jpg",
+        "DSC07698.jpg",
+        "WP_20170528_12_10_13_Pro.jpg",
+        "DSC07717.jpg",
+        "IMG_2606 (3).jpg",
+        "DSC07714.jpg",
+        "thumb.png",
+        "IMG_20170902_132142.jpg"
+    ],
+    "general-2019": [
+        "DSC08952.jpg",
+        "IMG_20190329_154725.jpg",
+        "DSC09046.jpg",
+        "DSC09086.jpg",
+        "DSC09051.jpg",
+        "DSC08944.jpg",
+        "DSC08940.jpg",
+        "DSC08968.jpg",
+        "DSC08955.jpg",
+        "IMG_20190329_153515.jpg",
+        "DSC09048_2.jpg",
+        "DSC09081.jpg",
+        "DSC08931.jpg",
+        "DSC09030.jpg",
+        "DSC08932.jpg",
+        "DSC09033.jpg",
+        "IMG_20190329_154750.jpg",
+        "IMG_20190324_130602.jpg",
+        "IMG_20190812_195449.jpg",
+        "DSC09039.jpg",
+        "IMG_20190329_163530.jpg",
+        "IMG_20190324_104807.jpg",
+        "DSC09016.jpg",
+        "IMG_20190512_172647.jpg",
+        "DSC08972.jpg",
+        "IMG_20190512_110110.jpg",
+        "DSC09070.jpg",
+        "DSC09058.jpg",
+        "DSC08949.jpg",
+        "DSC09077.jpg",
+        "IMG_20190811_142016.jpg",
+        "thumb.png",
+        "IMG_20190817_130111.jpg"
+    ],
+    "exp-2018-long-mynd": [
+        "IMG_20180323_150244.jpg",
+        "IMG_20180320_144940.jpg",
+        "IMG_20180320_154017.jpg",
+        "IMG_20180320_132542.jpg",
+        "IMG_20180320_152842.jpg",
+        "IMG_20180319_165428.jpg",
+        "IMG_20180318_123217.jpg",
+        "IMG_20180320_155422.jpg",
+        "IMG_20180319_175111.jpg",
+        "IMG_20180320_153518.jpg",
+        "IMG_20180319_165446.jpg",
+        "IMG_20180320_154640.jpg",
+        "IMG_20180319_152203.jpg",
+        "IMG_20180320_160252.jpg",
+        "IMG_20180323_114642.jpg",
+        "IMG_20180322_125709.jpg",
+        "IMG_20180321_104526.jpg",
+        "thumb.png"
+    ],
+    "exp-2007-long-mynd": [
+        "IMGP0261.jpg",
+        "IMGP0249.jpg",
+        "IMGP0267.jpg",
+        "IMGP0313.jpg",
+        "IMGP0229.jpg",
+        "IMGP0228.jpg",
+        "IMGP0365.jpg",
+        "IMGP0356.jpg",
+        "IMGP0342.jpg",
+        "IMGP0222.jpg",
+        "IMGP0382.jpg",
+        "10 - Windsock_ later.jpg",
+        "08 - Cloud forms over Mynd.jpg",
+        "IMGP0225.jpg",
+        "IMGP0224.jpg",
+        "IMGP0226.jpg",
+        "IMGP0352.jpg",
+        "IMGP0384.jpg",
+        "IMGP0227.jpg",
+        "IMGP0254.jpg",
+        "IMGP0240.jpg",
+        "IMGP0283.jpg",
+        "IMGP0309.jpg",
+        "04 - Blue sky.jpg",
+        "01 - Cloud forming.jpg",
+        "IMGP0296.jpg",
+        "IMGP0241.jpg",
+        "IMGP0281.jpg",
+        "IMGP0333.jpg",
+        "IMGP0253.jpg",
+        "IMGP0331.jpg",
+        "thumb.png",
+        "IMGP0287.jpg",
+        "IMGP0250.jpg"
+    ],
+    "exp-2017-eden": [
+        "DSC07642.jpg",
+        "DSC07508.jpg",
+        "DSC07521.jpg",
+        "DSC07669.jpg",
+        "DSC07523.jpg",
+        "DSC07536.jpg",
+        "DSC07522.jpg",
+        "DSC07551.jpg",
+        "DSC07586.jpg",
+        "DSC07632.jpg",
+        "DSC07625.jpg",
+        "DSC07594.jpg",
+        "DSC07622.jpg",
+        "DSC07554.jpg",
+        "DSC07612.jpg",
+        "DSC07565.jpg",
+        "DSC07605.jpg",
+        "DSC07611.jpg",
+        "DSC07567.jpg",
+        "DSC07574.jpg",
+        "DSC07560.jpg",
+        "DSC07507.jpg",
+        "DSC07664.jpg",
+        "DSC07504.jpg",
+        "DSC07505.jpg",
+        "DSC07511.jpg",
+        "DSC07500.jpg",
+        "DSC07514.jpg",
+        "thumb.png",
+        "DSC07649.jpg"
+    ],
+    "trial-flights": [
+        "mini-IMG_2769.jpg",
+        "DSC08167.jpg",
+        "DSC08164.jpg",
+        "DSCF1049_001.jpg",
+        "mini-IMG_2801.jpg",
+        "DSC07723.jpg",
+        "DSCF1062.jpg",
+        "mini-IMG_2736.jpg",
+        "IMG_0329.jpg",
+        "mini-IMG_2735.jpg",
+        "P1010012.jpg",
+        "P1010013.jpg",
+        "IMG_0338.jpg",
+        "P1010011.jpg",
+        "IMG_0339.jpg",
+        "P1010010.jpg",
+        "mini-IMG_2717.jpg",
+        "P1010009.jpg",
+        "IMG_0334.jpg",
+        "IMG_0335.jpg",
+        "IMG_0336.jpg",
+        "DSCF1037.jpg",
+        "IMG_0326.jpg",
+        "IMG_0333.jpg",
+        "DSCF1036.jpg",
+        "DSCF1035.jpg",
+        "DSCF1046.jpg",
+        "DSCF1052.jpg",
+        "mini-IMG_2748.jpg",
+        "mini-IMG_2735_001.jpg",
+        "DSCF1047.jpg",
+        "DSCF1051.jpg",
+        "DSCF1040.jpg",
+        "DSC07717.jpg",
+        "DSCF1041.jpg",
+        "DSCF1055.jpg",
+        "DSC07714.jpg",
+        "thumb.png"
+    ],
+    "exp-2013-latrigg": [
+        "DSC_0150.jpg",
+        "DSC_0030.jpg",
+        "DSC_0024.jpg",
+        "DSC_0018.jpg",
+        "DSC_0019.jpg",
+        "DSC_0031.jpg",
+        "DSC_0145.jpg",
+        "DSC_0027.jpg",
+        "DSC_0033.jpg",
+        "DSC_0032.jpg",
+        "DSC_0026.jpg",
+        "DSC_0142.jpg",
+        "DSC_0022.jpg",
+        "DSC_0036.jpg",
+        "DSC_0037.jpg",
+        "DSC_0023.jpg",
+        "DSC_0009.jpg",
+        "DSC_0035.jpg",
+        "DSC_0020.jpg",
+        "DSC_0034.jpg",
+        "DSC_0008.jpg",
+        "DSC_0127.jpg",
+        "DSC_0133.jpg",
+        "DSC_0090.jpg",
+        "DSC_0053.jpg",
+        "DSC_0047.jpg",
+        "DSC_0046.jpg",
+        "DSC_0052.jpg",
+        "DSC_0091.jpg",
+        "DSC_0124.jpg",
+        "DSC_0118.jpg",
+        "DSC_0087.jpg",
+        "DSC_0093.jpg",
+        "DSC_0044.jpg",
+        "DSC_0050.jpg",
+        "DSC_0051.jpg",
+        "DSC_0045.jpg",
+        "DSC_0092.jpg",
+        "DSC_0086.jpg",
+        "DSC_0125.jpg",
+        "DSC_0131.jpg",
+        "DSC_0109.jpg",
+        "DSC_0135.jpg",
+        "DSC_0082.jpg",
+        "DSC_0096.jpg",
+        "DSC_0069.jpg",
+        "DSC_0041.jpg",
+        "DSC_0055.jpg",
+        "DSC_0054.jpg",
+        "DSC_0040.jpg",
+        "DSC_0068.jpg",
+        "DSC_0097.jpg",
+        "DSC_0083.jpg",
+        "DSC_0120.jpg",
+        "DSC_0134.jpg",
+        "DSC_0108.jpg",
+        "DSC_0136.jpg",
+        "DSC_0081.jpg",
+        "DSC_0056.jpg",
+        "DSC_0042.jpg",
+        "DSC_0043.jpg",
+        "DSC_0057.jpg",
+        "DSC_0094.jpg",
+        "DSC_0137.jpg",
+        "DSC_0123.jpg",
+        "DSC_0072.jpg",
+        "DSC_0067.jpg",
+        "DSC_0073.jpg",
+        "DSC_0098.jpg",
+        "DSC_0113.jpg",
+        "DSC_0111.jpg",
+        "DSC_0139.jpg",
+        "DSC_0065.jpg",
+        "DSC_0071.jpg",
+        "DSC_0059.jpg",
+        "DSC_0058.jpg",
+        "DSC_0070.jpg",
+        "DSC_0138.jpg",
+        "DSC_0110.jpg",
+        "DSC_0128.jpg",
+        "DSC_0114.jpg",
+        "DSC_0048.jpg",
+        "DSC_0060.jpg",
+        "DSC_0074.jpg",
+        "DSC_0075.jpg",
+        "DSC_0061.jpg",
+        "DSC_0049.jpg",
+        "DSC_0115.jpg",
+        "DSC_0129.jpg",
+        "DSC_0117.jpg",
+        "DSC_0088.jpg",
+        "DSC_0063.jpg",
+        "DSC_0062.jpg",
+        "DSC_0089.jpg",
+        "DSC_0116.jpg",
+        "DSC_0011.jpg",
+        "DSC_0005.jpg",
+        "DSC_0039.jpg",
+        "DSC_0038.jpg",
+        "DSC_0004.jpg",
+        "DSC_0010.jpg",
+        "DSC_0006.jpg",
+        "DSC_0012.jpg",
+        "DSC_0013.jpg",
+        "DSC_0007.jpg",
+        "DSC_0003.jpg",
+        "DSC_0017.jpg",
+        "DSC_0016.jpg",
+        "DSC_0002.jpg",
+        "DSC_0028.jpg",
+        "DSC_0014.jpg",
+        "thumb.png",
+        "DSC_0001.jpg",
+        "DSC_0015.jpg",
+        "DSC_0029.jpg",
+        "DSC_0149.jpg"
+    ],
+    "exp-2019-long-mynd": [
+        "DSC_2237.jpg",
+        "DSC_2223.jpg",
+        "IMG_20190320_181133987_HDR.jpg",
+        "lol.jpg",
+        "IMG_20190320_114330648.jpg",
+        "IMG_20190323_145808_DRO.jpg",
+        "DSC_2231.jpg",
+        "IMG_20190317_113253571_HDR.jpg",
+        "IMG_20190319_113547.jpg",
+        "IMG_20190320_181317231_HDR.jpg",
+        "DSC_2218.jpg",
+        "IMG_20190319_172027.jpg",
+        "IMG_20190317_110256.jpg",
+        "IMG_20190317_181028705_HDR.jpg",
+        "IMG_20190320_091453259.jpg",
+        "IMG_20190318_114419_DRO.jpg",
+        "DSC_2227.jpg",
+        "IMG_20190320_181550330.jpg",
+        "IMG_20190321_104956.jpg",
+        "IMG_20190317_112237.jpg",
+        "DSC_2242.jpg",
+        "IMG_20190317_112425.jpg",
+        "IMG_20190323_093939.jpg",
+        "IMG_20190322_103524657_HDR.jpg",
+        "IMG_20190323_131717766_HDR.jpg",
+        "DSC_2245.jpg",
+        "IMG_20190322_164918.jpg",
+        "IMG_20190320_095405.jpg",
+        "IMG_20190321_101803.jpg",
+        "DSC_2249.jpg",
+        "DSC_2263.jpg",
+        "IMG_20190321_102531.jpg",
+        "IMG_20190321_180325.jpg",
+        "IMG_20190318_175631747.jpg",
+        "IMG_20190320_155206.jpg",
+        "DSC_2266.jpg",
+        "DSC_2270.jpg",
+        "IMG_20190321_102332_HDR.jpg",
+        "IMG_20190318_085651225.jpg",
+        "IMG_20190320_114807758.jpg",
+        "IMG_20190322_112014.jpg",
+        "IMG_20190321_174228.jpg",
+        "IMG_20190320_114644910.jpg",
+        "IMG_20190323_144057329_HDR.jpg",
+        "DSC_2214.jpg",
+        "DSC_2238.jpg",
+        "IMG_20190320_174453.jpg",
+        "IMG_20190320_175943.jpg",
+        "IMG_20190318_155343_DRO.jpg",
+        "IMG_20190322_165403_BURST001_COVER.jpg",
+        "thumb.png"
+    ],
+    "exp-2017-portmoak": [
+        "DSC_0555.jpg",
+        "DSC_0757.jpg",
+        "DSC_0755.jpg",
+        "DSC_0557.jpg",
+        "DSC_0625.jpg",
+        "DSC_0632.jpg",
+        "DSC_0737.jpg",
+        "DSC_0657.jpg",
+        "DSC_0647.jpg",
+        "DSC_0691.jpg",
+        "DSC_0663.jpg",
+        "DSC_0702.jpg",
+        "DSC_0664.jpg",
+        "DSC_0614.jpg",
+        "DSC_0605.jpg",
+        "DSC_0566.jpg",
+        "DSC_0610.jpg",
+        "thumb.png"
+    ],
+    "exp-2011-eden": [
+        "IMG_0489.jpg",
+        "IMG_0491.jpg",
+        "IMG_0484.jpg",
+        "IMG_0492.jpg",
+        "IMG_0486.jpg",
+        "IMG_0493.jpg",
+        "IMG_0482.jpg",
+        "thumb.png"
+    ],
+    "var-2007": [
+        "IMGP0799.jpg",
+        "IMGP0809.jpg",
+        "IMGP0821.jpg",
+        "IMGP0798.jpg",
+        "IMGP0822.jpg",
+        "IMGP0823.jpg",
+        "IMGP0777.jpg",
+        "IMGP0788.jpg",
+        "IMGP0824.jpg",
+        "IMGP0825.jpg",
+        "IMGP0790.jpg",
+        "IMGP0828.jpg",
+        "IMGP0800.jpg",
+        "IMGP0791.jpg",
+        "IMGP0778.jpg",
+        "IMGP0793.jpg",
+        "IMGP0817.jpg",
+        "IMGP0803.jpg",
+        "IMGP0816.jpg",
+        "IMGP0792.jpg",
+        "IMGP0779.jpg",
+        "IMGP0782.jpg",
+        "IMGP0796.jpg",
+        "IMGP0806.jpg",
+        "IMGP0813.jpg",
+        "IMGP0797.jpg",
+        "IMGP0781.jpg",
+        "IMGP0805.jpg",
+        "IMGP0811.jpg",
+        "IMGP0810.jpg",
+        "IMGP0804.jpg",
+        "thumb.png"
+    ],
+    "var-2019": [
+        "P1110498.jpg",
+        "P1110704.jpg",
+        "P1110499.jpg",
+        "1110460.jpg",
+        "P1110470.jpg",
+        "P1110666.jpg",
+        "1110528.jpg",
+        "IMG_20190627_113254.jpg",
+        "P1110673.jpg",
+        "P1110471.jpg",
+        "P1110465.jpg",
+        "P1110449.jpg",
+        "P1110688.jpg",
+        "P1110677.jpg",
+        "P1110515.jpg",
+        "P1110500.jpg",
+        "P1110514.jpg",
+        "1110538.jpg",
+        "IMG_20190627_113245.jpg",
+        "P1110676.jpg",
+        "P1110689.jpg",
+        "P1110474.jpg",
+        "P1110674.jpg",
+        "P1110516.jpg",
+        "1110467.jpg",
+        "P1110821.jpg",
+        "P1110798.jpg",
+        "P1110808.jpg",
+        "1110588.jpg",
+        "1110576.jpg",
+        "P1110749.jpg",
+        "P1110775.jpg",
+        "P1110415.jpg",
+        "P1110818.jpg",
+        "1110612.jpg",
+        "P1110627.jpg",
+        "1110569.jpg",
+        "1110583.jpg",
+        "P1110785.jpg",
+        "P1110787.jpg",
+        "P1110750.jpg",
+        "P1110751.jpg",
+        "P1110786.jpg",
+        "1110619.jpg",
+        "P1110621.jpg",
+        "IMG_20190626_173159.jpg",
+        "1110584.jpg",
+        "1110585.jpg",
+        "P1110797.jpg",
+        "P1110620.jpg",
+        "P1110805.jpg",
+        "1110587.jpg",
+        "1110586.jpg",
+        "P1110623.jpg",
+        "1110481.jpg",
+        "P1110446.jpg",
+        "P1110678.jpg",
+        "IMG_20190627_120124.jpg",
+        "P1110679.jpg",
+        "P1110447.jpg",
+        "1110441.jpg",
+        "P1110445.jpg",
+        "P1110684.jpg",
+        "P1110647.jpg",
+        "IMG_20190627_113248.jpg",
+        "P1110519.jpg",
+        "P1110530.jpg",
+        "P1110726.jpg",
+        "P1110681.jpg",
+        "P1110520.jpg",
+        "P1110723.jpg",
+        "P1110482.jpg",
+        "1110453.jpg",
+        "P1110682.jpg",
+        "thumb.png",
+        "1110452.jpg"
+    ],
+    "exp-2017-sutton-bank": [
+        "DSC_1306.jpg",
+        "DSC_1271.jpg",
+        "DSC07874.jpg",
+        "DSC_1304.jpg",
+        "DSC08001.jpg",
+        "DSC07858.jpg",
+        "DSC_1262.jpg",
+        "DSC_1212.jpg",
+        "DSC_1206.jpg",
+        "DSC07977.jpg",
+        "DSC07999.jpg",
+        "DSC07973.jpg",
+        "DSC_1216.jpg",
+        "DSC_1188.jpg",
+        "DSC07941.jpg",
+        "DSC_1191.jpg",
+        "DSC_1219.jpg",
+        "DSC07833.jpg",
+        "DSC07990.jpg",
+        "DSC07824.jpg",
+        "DSC_1195.jpg",
+        "DSC_1327.jpg",
+        "DSC07923.jpg",
+        "DSC07894.jpg",
+        "DSC_1250.jpg",
+        "DSC_1308.jpg",
+        "DSC08023.jpg",
+        "DSC_1322.jpg",
+        "thumb.png"
+    ],
+    "exp-2020-sutton-bank": [
+        "DSC00711.jpg",
+        "IMG_20200317_153458.jpg",
+        "DSC00704.jpg",
+        "DSC00706.jpg",
+        "IMG_20200315_210340.jpg",
+        "IMG_20200315_203738.jpg",
+        "DSC00702.jpg",
+        "IMG_20200317_135727.jpg",
+        "IMG_20200315_170120_1.jpg",
+        "DSC00701.jpg",
+        "89910685_4206581062700842_6320053472804732928_n.jpg",
+        "IMG_20200319_180525.jpg",
+        "IMG_20200315_172938.jpg",
+        "89993273_139443680789093_1192827123790774272_n.jpg",
+        "IMG_20200315_180428.jpg",
+        "IMG_20200315_170057.jpg",
+        "IMG_20200320_103020.jpg",
+        "IMG_20200315_171358.jpg",
+        "IMG_20200319_170521_BURST001_COVER.jpg",
+        "IMG_20200314_113028.jpg",
+        "89898637_726194764577516_5876578896693952512_n.jpg",
+        "IMG_20200315_172930.jpg",
+        "IMG_20200315_171034.jpg",
+        "IMG_20200314_131535.jpg",
+        "IMG_20200316_113045.jpg",
+        "IMG_20200315_172933.jpg",
+        "90625027_505554280129976_7865733866726621184_n.jpg",
+        "IMG_20200316_165139.jpg",
+        "IMG_20200316_164958.jpg",
+        "89925415_206852530546468_4905495853449347072_n.jpg",
+        "90520288_195236575247955_4080627189316321280_n.jpg",
+        "IMG_20200313_163458.jpg",
+        "DSC00693.jpg",
+        "DSC00719.jpg",
+        "IMG_20200315_170610.jpg",
+        "90109718_285328832451996_8010037711240953856_n.jpg",
+        "DSC00733.jpg",
+        "DSC00691.jpg",
+        "IMG_20200320_113659.jpg",
+        "DSC00695.jpg",
+        "IMG_20200315_173336.jpg",
+        "DSC00723.jpg",
+        "90388120_155605695611336_4136545623400775680_n.jpg",
+        "DSC00682.jpg",
+        "DSC00696.jpg",
+        "90463985_208653110241713_4713145923486613504_n.jpg",
+        "IMG_20200315_173447.jpg",
+        "thumb.png",
+        "DSC00708.jpg",
+        "DSC00683.jpg",
+        "89945118_575571116635994_7396625783332012032_n.jpg",
+        "IMG_20200315_092519.jpg"
+    ],
+    "exp-2013-eden": [
+        "DSC_0385.jpg",
+        "DSC_0391.jpg",
+        "DSC_0346.jpg",
+        "DSC_0434.jpg",
+        "DSC_0352.jpg",
+        "DSC_0408.jpg",
+        "DSC_0144.jpg",
+        "DSC_0232.jpg",
+        "DSC_0540.jpg",
+        "DSC_0179.jpg",
+        "DSC_0145.jpg",
+        "DSC_0192.jpg",
+        "DSC_0353.jpg",
+        "DSC_0347.jpg",
+        "DSC_0421.jpg",
+        "DSC_0390.jpg",
+        "DSC_0384.jpg",
+        "DSC_0351.jpg",
+        "DSC_0345.jpg",
+        "DSC_0231.jpg",
+        "DSC_0146.jpg",
+        "DSC_0152.jpg",
+        "DSC_0378.jpg",
+        "DSC_0422.jpg",
+        "DSC_0350.jpg",
+        "DSC_0436.jpg",
+        "DSC_0387.jpg",
+        "DSC_0383.jpg",
+        "DSC_0368.jpg",
+        "DSC_0432.jpg",
+        "DSC_0354.jpg",
+        "DSC_0340.jpg",
+        "DSC_0156.jpg",
+        "DSC_0142.jpg",
+        "DSC_0143.jpg",
+        "DSC_0180.jpg",
+        "DSC_0341.jpg",
+        "DSC_0427.jpg",
+        "DSC_0433.jpg",
+        "DSC_0355.jpg",
+        "DSC_0369.jpg",
+        "DSC_0382.jpg",
+        "DSC_0396.jpg",
+        "DSC_0419.jpg",
+        "DSC_0425.jpg",
+        "DSC_0343.jpg",
+        "DSC_0357.jpg",
+        "DSC_0431.jpg",
+        "DSC_0182.jpg",
+        "DSC_0169.jpg",
+        "DSC_0222.jpg",
+        "DSC_0154.jpg",
+        "DSC_0168.jpg",
+        "DSC_0356.jpg",
+        "DSC_0430.jpg",
+        "DSC_0342.jpg",
+        "DSC_0480.jpg",
+        "DSC_0494.jpg",
+        "DSC_0325.jpg",
+        "DSC_0457.jpg",
+        "DSC_0319.jpg",
+        "DSC_0133.jpg",
+        "DSC_0090.jpg",
+        "DSC_0084.jpg",
+        "DSC_0292.jpg",
+        "DSC_0279.jpg",
+        "DSC_0278.jpg",
+        "DSC_0293.jpg",
+        "DSC_0091.jpg",
+        "DSC_0318.jpg",
+        "DSC_0442.jpg",
+        "DSC_0324.jpg",
+        "DSC_0481.jpg",
+        "DSC_0497.jpg",
+        "DSC_0454.jpg",
+        "DSC_0332.jpg",
+        "DSC_0326.jpg",
+        "DSC_0468.jpg",
+        "DSC_0093.jpg",
+        "DSC_0078.jpg",
+        "DSC_0285.jpg",
+        "DSC_0291.jpg",
+        "DSC_0290.jpg",
+        "DSC_0284.jpg",
+        "DSC_0079.jpg",
+        "DSC_0092.jpg",
+        "DSC_0086.jpg",
+        "DSC_0455.jpg",
+        "DSC_0333.jpg",
+        "DSC_0496.jpg",
+        "DSC_0492.jpg",
+        "DSC_0486.jpg",
+        "DSC_0323.jpg",
+        "DSC_0082.jpg",
+        "DSC_0096.jpg",
+        "DSC_0069.jpg",
+        "DSC_0280.jpg",
+        "DSC_0294.jpg",
+        "DSC_0257.jpg",
+        "DSC_0256.jpg",
+        "DSC_0242.jpg",
+        "DSC_0295.jpg",
+        "DSC_0281.jpg",
+        "DSC_0068.jpg",
+        "DSC_0097.jpg",
+        "DSC_0083.jpg",
+        "DSC_0134.jpg",
+        "DSC_0108.jpg",
+        "DSC_0478.jpg",
+        "DSC_0493.jpg",
+        "DSC_0485.jpg",
+        "DSC_0491.jpg",
+        "DSC_0308.jpg",
+        "DSC_0320.jpg",
+        "DSC_0446.jpg",
+        "DSC_0334.jpg",
+        "DSC_0095.jpg",
+        "DSC_0297.jpg",
+        "DSC_0268.jpg",
+        "DSC_0255.jpg",
+        "DSC_0269.jpg",
+        "DSC_0296.jpg",
+        "DSC_0094.jpg",
+        "DSC_0123.jpg",
+        "DSC_0453.jpg",
+        "DSC_0335.jpg",
+        "DSC_0321.jpg",
+        "DSC_0447.jpg",
+        "DSC_0309.jpg",
+        "DSC_0490.jpg",
+        "DSC_0489.jpg",
+        "DSC_0304.jpg",
+        "DSC_0310.jpg",
+        "DSC_0338.jpg",
+        "DSC_0106.jpg",
+        "DSC_0112.jpg",
+        "DSC_0099.jpg",
+        "DSC_0072.jpg",
+        "DSC_0270.jpg",
+        "DSC_0264.jpg",
+        "DSC_0259.jpg",
+        "DSC_0265.jpg",
+        "DSC_0271.jpg",
+        "DSC_0067.jpg",
+        "DSC_0073.jpg",
+        "DSC_0098.jpg",
+        "DSC_0107.jpg",
+        "DSC_0339.jpg",
+        "DSC_0311.jpg",
+        "DSC_0305.jpg",
+        "DSC_0488.jpg",
+        "DSC_0449.jpg",
+        "DSC_0105.jpg",
+        "DSC_0139.jpg",
+        "DSC_0071.jpg",
+        "DSC_0267.jpg",
+        "DSC_0273.jpg",
+        "DSC_0272.jpg",
+        "DSC_0500.jpg",
+        "DSC_0266.jpg",
+        "DSC_0299.jpg",
+        "DSC_0070.jpg",
+        "DSC_0138.jpg",
+        "DSC_0104.jpg",
+        "DSC_0110.jpg",
+        "DSC_0306.jpg",
+        "DSC_0460.jpg",
+        "DSC_0474.jpg",
+        "DSC_0470.jpg",
+        "DSC_0464.jpg",
+        "DSC_0114.jpg",
+        "DSC_0100.jpg",
+        "DSC_0074.jpg",
+        "DSC_0276.jpg",
+        "DSC_0277.jpg",
+        "DSC_0263.jpg",
+        "DSC_0539.jpg",
+        "DSC_0288.jpg",
+        "DSC_0075.jpg",
+        "DSC_0101.jpg",
+        "DSC_0303.jpg",
+        "DSC_0317.jpg",
+        "DSC_0498.jpg",
+        "DSC_0329.jpg",
+        "DSC_0467.jpg",
+        "DSC_0315.jpg",
+        "DSC_0103.jpg",
+        "DSC_0117.jpg",
+        "DSC_0088.jpg",
+        "DSC_0077.jpg",
+        "DSC_0275.jpg",
+        "DSC_0274.jpg",
+        "DSC_0248.jpg",
+        "DSC_0076.jpg",
+        "DSC_0102.jpg",
+        "DSC_0472.jpg",
+        "DSC_0314.jpg",
+        "DSC_0328.jpg",
+        "DSC_0499.jpg",
+        "DSC_0398.jpg",
+        "DSC_0401.jpg",
+        "DSC_0415.jpg",
+        "DSC_0373.jpg",
+        "DSC_0429.jpg",
+        "DSC_0165.jpg",
+        "DSC_0171.jpg",
+        "DSC_0159.jpg",
+        "DSC_0207.jpg",
+        "DSC_0206.jpg",
+        "DSC_0170.jpg",
+        "DSC_0428.jpg",
+        "DSC_0414.jpg",
+        "DSC_0372.jpg",
+        "DSC_0400.jpg",
+        "DSC_0399.jpg",
+        "DSC_0370.jpg",
+        "DSC_0416.jpg",
+        "DSC_0402.jpg",
+        "DSC_0364.jpg",
+        "DSC_0358.jpg",
+        "DSC_0166.jpg",
+        "DSC_0204.jpg",
+        "DSC_0239.jpg",
+        "DSC_0173.jpg",
+        "DSC_0359.jpg",
+        "DSC_0403.jpg",
+        "DSC_0365.jpg",
+        "DSC_0371.jpg",
+        "DSC_0349.jpg",
+        "DSC_0413.jpg",
+        "DSC_0375.jpg",
+        "DSC_0361.jpg",
+        "DSC_0228.jpg",
+        "DSC_0162.jpg",
+        "DSC_0360.jpg",
+        "DSC_0406.jpg",
+        "DSC_0374.jpg",
+        "DSC_0348.jpg",
+        "DSC_0389.jpg",
+        "DSC_0404.jpg",
+        "DSC_0362.jpg",
+        "DSC_0410.jpg",
+        "DSC_0148.jpg",
+        "DSC_0160.jpg",
+        "thumb.png",
+        "DSC_0377.jpg",
+        "DSC_0411.jpg",
+        "DSC_0405.jpg",
+        "DSC_0363.jpg"
+    ],
+    "exp-2019-portmoak": [
+        "IMG_20191209_095810.jpg",
+        "DSC08789.jpg",
+        "IMG_20191211_144159.jpg",
+        "IMG_20191213_124426.jpg",
+        "DSC08825.jpg",
+        "IMG_20191208_161519.jpg",
+        "IMG_20191209_095755.jpg",
+        "IMG_20191213_120331.jpg",
+        "DSC08788.jpg",
+        "DSC08798.jpg",
+        "IMG_20191213_103842.jpg",
+        "IMG_20191211_104803.jpg",
+        "IMG_20191212_010930.jpg",
+        "IMG_20191213_103840.jpg",
+        "IMG_20191212_140437.jpg",
+        "IMG_20191209_083552.jpg",
+        "IMG_20191209_092503.jpg",
+        "IMG_20191209_120401.jpg",
+        "IMG_20191211_102911_1.jpg",
+        "IMG_20191213_131102.jpg",
+        "IMG_20191213_103832.jpg",
+        "IMG_20191211_150415.jpg",
+        "IMG_20191209_095722.jpg",
+        "IMG_20191213_130035.jpg",
+        "IMG_20191213_103602.jpg",
+        "IMG_20191213_151829.jpg",
+        "IMG_20191213_103835.jpg",
+        "IMG_20191213_130031.jpg",
+        "DSC08894.jpg",
+        "IMG_20191209_142724.jpg",
+        "IMG_20191210_214737.jpg",
+        "DSC08843.jpg",
+        "DSC08881.jpg",
+        "DSC08897.jpg",
+        "IMG_20191209_095719.jpg",
+        "IMG_20191209_095725.jpg",
+        "DSC08882.jpg",
+        "IMG_20191211_150409.jpg",
+        "IMG_20191213_124103.jpg",
+        "DSC08858.jpg",
+        "DSC08871.jpg",
+        "DSC00626.jpg",
+        "IMG_20191211_150839.jpg",
+        "DSC08796-2.jpg",
+        "IMG_20191209_085841.jpg",
+        "DSC00631.jpg",
+        "DSC00619.jpg",
+        "IMG_20191213_103838.jpg",
+        "IMG_20191213_124505.jpg",
+        "DSC00635.jpg",
+        "IMG_20191209_144957.jpg",
+        "DSC08877.jpg",
+        "IMG_20191213_124110.jpg",
+        "IMG_20191211_110348.jpg",
+        "IMG_20191213_105135.jpg",
+        "IMG_20191213_103829.jpg",
+        "IMG_20191209_112938.jpg",
+        "IMG_20191213_124927.jpg",
+        "IMG_20191209_095704.jpg",
+        "IMG_20191209_095711.jpg",
+        "IMG_20191211_151920.jpg",
+        "DSC08797.jpg",
+        "Eszter Top Gun 2.jpg",
+        "IMG_20191213_122934.jpg",
+        "IMG_20191209_084530.jpg",
+        "IMG_20191211_150723.jpg",
+        "IMG_20191210_153332.jpg",
+        "IMG_20191213_130315.jpg",
+        "IMG_20191209_084651.jpg",
+        "DSC00652.jpg",
+        "DSC08795.jpg",
+        "IMG_20191213_103832_1.jpg",
+        "IMG_20191213_122932.jpg",
+        "IMG_20191211_150733.jpg",
+        "DSC00643.jpg",
+        "IMG_20191211_150725.jpg",
+        "IMG_20191213_122931.jpg",
+        "DSC08816.jpg",
+        "DSC08817.jpg",
+        "thumb.png"
+    ],
+    "exp-2018-portmoak": [
+        "IMG_20181205_103400.jpg",
+        "000713530001.jpg",
+        "000713530014.jpg",
+        "IMG_20181204_145413.jpg",
+        "IMG_20181203_140732.jpg",
+        "IMG_20181204_113447.jpg",
+        "000713530004.jpg",
+        "IMG_20181203_093433.jpg",
+        "IMG_20181203_151410.jpg",
+        "IMG_20181205_102445.jpg",
+        "IMG_20181202_124630.jpg",
+        "IMG_20181203_141128.jpg",
+        "IMG_20181202_131728.jpg",
+        "IMG_20181203_141856.jpg",
+        "IMG_20181203_115552.jpg",
+        "IMG_20181204_150119.jpg",
+        "IMG_20181203_102559.jpg",
+        "IMG_20181203_115555.jpg",
+        "IMG_20181203_112419.jpg",
+        "IMG_20181202_123017_1.jpg",
+        "IMG_20181204_134124.jpg",
+        "IMG_20181203_141125.jpg",
+        "IMG_20181206_152339.jpg",
+        "IMG_20181202_142020.jpg",
+        "IMG_20181206_142927.jpg",
+        "thumb.png"
+    ],
+    "exp-2005-long-mynd": [
+        "P3250257.jpg",
+        "P3250256.jpg",
+        "P3220248.jpg",
+        "P3220249.jpg",
+        "P3220247.jpg",
+        "P3220246.jpg",
+        "P3220244.jpg",
+        "P3220245.jpg",
+        "P3260265.jpg",
+        "P3260261.jpg",
+        "P3270267.jpg",
+        "P3260262.jpg",
+        "P3260263.jpg",
+        "P3250258.jpg",
+        "P3250259.jpg",
+        "P3210243.jpg",
+        "thumb.png",
+        "P3250260.jpg"
+    ],
+    "exp-2013-portmoak": [
+        "IMG_2308_glider_sign.jpg",
+        "IMG_2232_CUGC.jpg",
+        "IMG_2223_prep_glider.jpg",
+        "IMG_2230_derig_fuselage.jpg",
+        "IMG_2228_derig_wing.jpg",
+        "IMG_2222_all_around_glider.jpg",
+        "thumb.png"
+    ],
+    "exp-2011-sutton-bank": [
+        "IMG_0475.jpg",
+        "IMG_0451.jpg",
+        "IMG_0444.jpg",
+        "IMG_0441.jpg",
+        "IMG_0456.jpg",
+        "thumb.png"
+    ],
+    "exp-2009-nympsfield": [
+        "IMG_0246-479049830.jpg",
+        "IMG_0248.jpg",
+        "IMG_0273.jpg",
+        "IMG_0272.jpg",
+        "IMG_0264.jpg",
+        "IMG_0254.jpg",
+        "IMG_0268.jpg",
+        "IMG_0269.jpg",
+        "IMG_0241.jpg",
+        "IMG_0242.jpg",
+        "IMG_0246.jpg",
+        "IMG_0252.jpg",
+        "IMG_0247.jpg",
+        "IMG_0247-1300969778.jpg",
+        "thumb.png"
+    ],
+    "exp-2004-long-mynd": [
+        "DSC01652.jpg",
+        "DSC01646.jpg",
+        "DSC01647.jpg",
+        "DSC01653.jpg",
+        "DSC01651.jpg",
+        "DSC01650.jpg",
+        "DSC01668.jpg",
+        "DSC01654.jpg",
+        "P3220248.jpg",
+        "DSC01655.jpg",
+        "DSC01669.jpg",
+        "DSC01657.jpg",
+        "DSC01656.jpg",
+        "DSC01667.jpg",
+        "P3220247.jpg",
+        "P3220246.jpg",
+        "DSC01666.jpg",
+        "DSC01664.jpg",
+        "DSC01670.jpg",
+        "DSC01658.jpg",
+        "P3220244.jpg",
+        "P3220245.jpg",
+        "DSC01671.jpg",
+        "DSC01663.jpg",
+        "thumb.png"
+    ],
+    "exp-2003-portmoak": [
+        "DSC01157.jpg",
+        "DSC01143.jpg",
+        "DSC01142.jpg",
+        "DSC01156.jpg",
+        "DSC01140.jpg",
+        "DSC01154.jpg",
+        "DSC01155.jpg",
+        "DSC01141.jpg",
+        "DSC01145.jpg",
+        "DSC01150.jpg",
+        "DSC01144.jpg",
+        "8.jpg",
+        "DSC01152.jpg",
+        "DSC01146.jpg",
+        "DSC01147.jpg",
+        "DSC01153.jpg",
+        "9.jpg",
+        "DSC01134.jpg",
+        "DSC01120.jpg",
+        "DSC01121.jpg",
+        "DSC01135.jpg",
+        "DSC01137.jpg",
+        "DSC01122.jpg",
+        "12.jpg",
+        "DSC01126.jpg",
+        "DSC01132.jpg",
+        "DSC01127.jpg",
+        "13.jpg",
+        "11.jpg",
+        "DSC01119.jpg",
+        "DSC01131.jpg",
+        "DSC01124.jpg",
+        "DSC01130.jpg",
+        "10.jpg",
+        "DSC01115.jpg",
+        "DSC01129.jpg",
+        "DSC01116.jpg",
+        "DSC01138.jpg",
+        "DSC01139.jpg",
+        "4.jpg",
+        "5.jpg",
+        "7.jpg",
+        "DSC01149.jpg",
+        "DSC01148.jpg",
+        "6.jpg",
+        "2.jpg",
+        "DSC01159.jpg",
+        "3.jpg",
+        "thumb.png"
+    ],
+    "exp-2002-portmoak": [
+        "DSCF0865.jpg",
+        "DSCF0938.jpg",
+        "DSCF0904.jpg",
+        "DSCF0910.jpg",
+        "DSCF0870.jpg",
+        "DSCF0872.jpg",
+        "DSCF0913.jpg",
+        "DSCF0867.jpg",
+        "DSCF0888.jpg",
+        "DSCF0877.jpg",
+        "DSCF0863.jpg",
+        "DSCF0903.jpg",
+        "DSCF0916.jpg",
+        "DSCF0902.jpg",
+        "DSCF0862.jpg",
+        "DSCF0876.jpg",
+        "DSCF0848.jpg",
+        "DSCF0900.jpg",
+        "DSCF0915.jpg",
+        "DSCF0875.jpg",
+        "DSCF0887.jpg",
+        "DSCF0844.jpg",
+        "DSCF0930.jpg",
+        "DSCF0931.jpg",
+        "DSCF0879.jpg",
+        "DSCF0851.jpg",
+        "DSCF0890.jpg",
+        "DSCF0847.jpg",
+        "DSCF0927.jpg",
+        "DSCF0933.jpg",
+        "DSCF0932.jpg",
+        "DSCF0926.jpg",
+        "DSCF0881.jpg",
+        "DSCF0856.jpg",
+        "DSCF0843.jpg",
+        "DSCF0857.jpg",
+        "DSCF0880.jpg",
+        "DSCF0935.jpg",
+        "DSCF0920.jpg",
+        "DSCF0854.jpg",
+        "DSCF0897.jpg",
+        "DSCF0953.jpg",
+        "DSCF0946.jpg",
+        "DSCF0952.jpg",
+        "DSCF0944.jpg",
+        "DSCF0950.jpg",
+        "DSCF0945.jpg",
+        "DSCF0941.jpg",
+        "thumb.png",
+        "DSCF0957.jpg"
+    ]
+}
 
-<script> 
 
-document.addEventListener("DOMContentLoaded", function() {
-    var galleryStartButtons = document.querySelectorAll('.gallery-start');
+</script>
 
-    galleryStartButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            var targetModalId = this.getAttribute('data-target');
-            var targetModal = document.querySelector(targetModalId);
-            if (targetModal) {
-                targetModal.style.display = 'block';
-                var modalImages = targetModal.querySelectorAll('.card-img-top');
-                modalImages.forEach(function(img) {
-                    img.classList.remove('gal-show');
-                });
-                modalImages[0].classList.add('gal-show');
-            }
+
+<script>
+// Function to generate thumbnail images and attach click event listeners
+
+function generateThumbnails() {
+    const galleryRow = document.getElementById("galleryRow");
+
+    for (const folder in galleryData) {
+        if (galleryData.hasOwnProperty(folder)) {
+            const folderImages = galleryData[folder];
+
+            // Get the thumbnail image path
+            const thumbnailPath = `gallery/${folder}/thumb.png`;
+
+            // Construct paths for all images in the folder, including the thumbnail
+            const imagesPaths = folderImages.map(image => `/gallery/${folder}/${image}`);
+
+            // Create thumbnail container
+            const colDiv = document.createElement("div");
+            colDiv.classList.add("col-sm-12", "col-md-6", "col-lg-4", "col-xl-4", "col-xs-12", "mb-4");
+
+            // Create thumbnail image
+            const thumbnailImg = document.createElement("img");
+            thumbnailImg.classList.add("img-thumbnail", "w-100", "d-block");
+            thumbnailImg.src = thumbnailPath;
+            thumbnailImg.alt = folder;
+
+            // Create button to open modal
+            const button = document.createElement("button");
+            button.classList.add("btn", "btn-primary", "gallery-start");
+            button.textContent = folder;
+            button.dataset.folder = folder; // Store folder name in data-folder attribute
+
+            // Append thumbnail and button to thumbnail container
+            colDiv.appendChild(thumbnailImg);
+            colDiv.appendChild(button);
+
+            // Append thumbnail container to gallery row
+            galleryRow.appendChild(colDiv);
+        }
+    }
+
+    // Attach click event listener to gallery buttons
+    const galleryButtons = document.querySelectorAll(".gallery-start");
+    galleryButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const folder = this.dataset.folder;
+            displayImages(folder);
         });
     });
+}
 
-    document.querySelectorAll('.modal').forEach(function(modal) {
-        modal.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
+function displayImages(folder) {
+    const modalTitle = document.getElementById("galleryModalLabel");
+    modalTitle.textContent = folder.replace(/-/g, " "); // Replace hyphens with spaces
+
+    const galleryImages = document.getElementById("galleryImages");
+    galleryImages.innerHTML = ""; // Clear previous images
+
+    const images = galleryData[folder];
+    images.forEach((image, index) => {
+        const img = document.createElement("img");
+        img.classList.add("img-fluid", "my-2");
+        img.src = `/gallery/${folder}/${image}`;
+        img.alt = folder;
+
+        galleryImages.appendChild(img);
+
+        // Add the "displayed" class to the first image
+        if (index === 0) {
+            img.classList.add("displayed");
+        }
     });
 
-    document.querySelectorAll('.gallery-next').forEach(function(button) {
-        button.addEventListener('click', function() {
-            var currentImg = this.parentElement.parentElement.querySelector('.gal-show');
-            var nextImg = currentImg.nextElementSibling;
-            if (nextImg) {
-                currentImg.classList.remove('gal-show');
-                nextImg.classList.add('gal-show');
-            }
-        });
-    });
+    // Open modal
+    $('#galleryModal').modal('show');
 
-    document.querySelectorAll('.gallery-prev').forEach(function(button) {
-        button.addEventListener('click', function() {
-            var currentImg = this.parentElement.parentElement.querySelector('.gal-show');
-            var prevImg = currentImg.previousElementSibling;
-            if (prevImg) {
-                currentImg.classList.remove('gal-show');
-                prevImg.classList.add('gal-show');
-            }
-        });
-    });
-});
-
-    </script>
+    // Initialize previous and next buttons
+    const previousButton = document.getElementById("previousButton");
+    const nextButton = document.getElementById("nextButton");
+    let currentIndex = 0;
     
+    previousButton.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateImage(currentIndex);
+        }
+    });
+
+    nextButton.addEventListener("click", () => {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            updateImage(currentIndex);
+        }
+    });
+
+    function updateImage(index) {
+        const displayedImage = galleryImages.querySelector(".displayed");
+        if (displayedImage) {
+            displayedImage.classList.remove("displayed");
+        }
+        const images = galleryImages.querySelectorAll("img");
+        images[index].classList.add("displayed");
+    }
+}
+
+
+    // Function to close the modal
+    function closeModal() {
+        $('#galleryModal').modal('hide'); // Close the modal using Bootstrap modal method
+    }
+
+    // Attach click event listener to the close button
+    const closeButton = document.querySelector(".modal-header .close");
+    if (closeButton) {
+        closeButton.addEventListener("click", closeModal);
+    }
     
-    
+
+// Call generateThumbnails function when the page is loaded
+window.onload = generateThumbnails;
+
+</script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/bootstrap.js"></script>
@@ -545,9 +1482,6 @@ document.addEventListener("DOMContentLoaded", function() {
     <script src="assets/js/popper.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/mainconf.js"></script>
 </body>
 
 </html>

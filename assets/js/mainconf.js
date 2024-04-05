@@ -25,12 +25,15 @@ $(".gallery-start").on("touchstart click", function(e) {
     current_imgs[curr_folder] = 0;
     img_lists[curr_folder] = [];
 
+    alert(current_imgs.length)
+
     /* Read directory contents */
     $.ajax({
-      url: "/img/gallery/" + curr_folder + "/",
+      url: "/gallery/" + curr_folder + "/",
       success: function(data) {
+        alert("Hi")
         $(data).find("a:contains(.jpg)").each(function () {
-          var filename = "/img/gallery/" + curr_folder + "/" + this.innerHTML;
+          var filename = "/gallery/" + curr_folder + "/" + this.innerHTML;
           img_lists[curr_folder].push(filename);
         });
 
