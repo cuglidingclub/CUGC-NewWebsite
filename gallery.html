@@ -86,39 +86,78 @@
     }
 
     /* CSS for the modal */
-.modal-dialog {
-    max-width: 90%; /* Adjust the maximum width as needed */
-    margin: 30px auto; /* Center the modal vertically and horizontally */
-}
+    .modal-dialog {
+        max-width: 90%; /* Adjust the maximum width as needed */
+        margin: 30px auto; /* Center the modal vertically and horizontally */
+    }
 
-.modal-content {
-    height: 80vh; /* Set the height of the modal content */
-}
+    .modal-content {
+        height: 80vh; /* Set the height of the modal content */
+    }
 
-.modal-body {
-    overflow-y: auto; /* Enable vertical scrolling if the content exceeds the modal height */
-}
+    .modal-body {
+        overflow-y: auto; /* Enable vertical scrolling if the content exceeds the modal height */
+    }
 
-/* CSS for the images */
-#galleryImages img {
-    max-width: 100%; /* Ensure the images don't exceed the modal width */
-    max-height: 100%; /* Ensure the images don't exceed the modal height */
-    object-fit: contain; /* Fit the images within the container while preserving aspect ratio */
+    /* CSS for the images */
+    #galleryImages img {
+        max-width: 100%; /* Ensure the images don't exceed the modal width */
+        max-height: 100%; /* Ensure the images don't exceed the modal height */
+        object-fit: contain; /* Fit the images within the container while preserving aspect ratio */
+    }
+    .boxed-section {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px; /* Add margin between boxed sections */
+    transition: border-color 0.3s ease;
+    width: calc(25% - 20px); /* Set boxed section width to 25% of the screen width minus margins and padding */
+    box-sizing: border-box; /* Include padding and border in the box's total width and height */
+    padding-left: 20px;
+    padding-right: 20px;
 }
+    .boxed-section:hover {
+        border-color: #007bff; /* Change border color on hover */
+    }
+
+    .boxed-section h2 {
+        margin-top: 0;
+        font-size: 18px;
+    }
+
+    .thumbnail-container {
+        position: relative;
+    }
+
+    .thumbnail-container img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .thumbnail-container button {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 </style>
-    <h1 class="heading">Gallery</h1>
-    <div class="row" id="galleryRow"></div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="galleryModal" aria-labelledby="galleryModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="galleryModalLabel">Gallery</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
-                </div>
-                <div class="modal-body" id="galleryImages"></div>
-                <div class="modal-footer"><button class="btn btn-primary" id="previousButton" type="button">Previous</button><button class="btn btn-primary" id="nextButton" type="button">Next</button></div>
+
+<h1 class="heading">Gallery</h1>
+<div id="galleryRow" class="row"></div>
+
+<div id="galleryModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="galleryModalLabel" class="modal-title">Gallery</h5><button class="close" aria-label="Close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
             </div>
+            <div id="galleryImages" class="modal-body"></div>
+            <div class="modal-footer"><button id="previousButton" class="btn btn-primary" type="button">Previous</button><button id="nextButton" class="btn btn-primary" type="button">Next</button></div>
         </div>
-    </div><script>
+    </div>
+</div><script>
 
 
 galleryData = {
@@ -347,7 +386,7 @@ galleryData = {
         "thumb.webp",
         "DSC07649.webp"
     ],
-    "trial-flights": [
+    "trial-flights-2019": [
         "mini-IMG_2769.webp",
         "DSC08167.webp",
         "DSC08164.webp",
@@ -1334,110 +1373,156 @@ galleryData = {
 
 
 </script><script>
-// Function to generate thumbnail images and attach click event listeners
+    // Function to generate thumbnail images and attach click event listeners
+    function generateThumbnails() {
+        const galleryRow = document.getElementById("galleryRow");
 
-function generateThumbnails() {
-    const galleryRow = document.getElementById("galleryRow");
-
-    for (const folder in galleryData) {
-        if (galleryData.hasOwnProperty(folder)) {
-            const folderImages = galleryData[folder];
-
-            // Get the thumbnail image path
-            const thumbnailPath = `assets/img/gallery/${folder}/thumb.webp`;
-
-            // Construct paths for all images in the folder, including the thumbnail
-            const imagesPaths = folderImages.map(image => `assets/img/gallery/${folder}/${image}`);
-
-            // Create thumbnail container
-            const colDiv = document.createElement("div");
-            colDiv.classList.add("col-sm-12", "col-md-6", "col-lg-4", "col-xl-4", "col-xs-12", "mb-4");
-
-            // Create thumbnail image
-            const thumbnailImg = document.createElement("img");
-            thumbnailImg.classList.add("img-thumbnail", "w-100", "d-block");
-            thumbnailImg.src = thumbnailPath;
-            thumbnailImg.alt = folder;
-
-            // Create button to open modal
-            const button = document.createElement("button");
-            button.classList.add("btn", "btn-primary", "gallery-start");
-            button.textContent = folder;
-            button.dataset.folder = folder; // Store folder name in data-folder attribute
-
-            // Append thumbnail and button to thumbnail container
-            colDiv.appendChild(thumbnailImg);
-            colDiv.appendChild(button);
-
-            // Append thumbnail container to gallery row
-            galleryRow.appendChild(colDiv);
+        // Group images by year
+        const years = {};
+        for (const folder in galleryData) {
+            if (galleryData.hasOwnProperty(folder)) {
+                const year = folder.split('-')[0];
+                if (!years[year]) {
+                    years[year] = [];
+                }
+                years[year].push(folder);
+            }
         }
-    }
 
-    // Attach click event listener to gallery buttons
-    const galleryButtons = document.querySelectorAll(".gallery-start");
-    galleryButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            const folder = this.dataset.folder;
-            displayImages(folder);
+        // Sort years in descending order (from recent year to last year)
+        const sortedYears = Object.keys(years).sort((a, b) => b - a);
+
+        // Create boxed sections for each year
+        sortedYears.forEach(year => {
+            // Create heading for the year
+            let yearHeading = document.createElement("h2");
+            if (year.includes("exp")) {
+                yearHeading.textContent = "Expeditions";
+            } else if (year.includes("var")) {
+                yearHeading.textContent = "Varsity Match";
+            } else if (year.includes("trial")) {
+                yearHeading.textContent = "Trial Flights";
+            } else if (year.includes("general")) {
+                yearHeading.textContent = "General Photos by Year";
+            } else {
+                yearHeading.textContent = year;
+            }
+            galleryRow.appendChild(yearHeading);
+
+            // Create row for images of this year
+            const yearRow = document.createElement("div");
+            yearRow.classList.add("row");
+
+            // Sort folders within the year in descending order (most recent first)
+            years[year].sort((a, b) => b.localeCompare(a)).forEach(folder => {
+                const folderImages = galleryData[folder];
+
+                // Create boxed section
+                const boxedSection = document.createElement("div");
+                boxedSection.classList.add("col-sm-12", "col-md-6", "col-lg-4", "col-xl-4", "col-xs-12", "mb-4", "boxed-section");
+
+                // Replace general, trial, var, and exp with empty string and hyphens with spaces
+                const headingText = folder.replace(/general-|trial-flights-|var-|exp-/, "").replace(/-/g, " ");
+
+                // Create heading
+                const heading = document.createElement("h3");
+                heading.textContent = headingText.replace(/-/g, " ");
+
+                // Create thumbnail container
+                const thumbnailContainer = document.createElement("div");
+                thumbnailContainer.classList.add("thumbnail-container");
+
+                // Create thumbnail image
+                const thumbnailImg = document.createElement("img");
+                thumbnailImg.classList.add("img-thumbnail", "w-100", "d-block");
+                thumbnailImg.src = `assets/img/gallery/${folder}/thumb.webp`;
+                thumbnailImg.alt = folder;
+
+                // Create button to open modal
+                const button = document.createElement("button");
+                button.classList.add("btn", "btn-primary", "gallery-start");
+                button.textContent = "View";
+                button.dataset.folder = folder; // Store folder name in data-folder attribute
+
+                // Append elements to thumbnail container
+                thumbnailContainer.appendChild(thumbnailImg);
+                thumbnailContainer.appendChild(button);
+
+                // Append heading and thumbnail container to boxed section
+                boxedSection.appendChild(heading);
+                boxedSection.appendChild(thumbnailContainer);
+
+                // Append boxed section to year row
+                yearRow.appendChild(boxedSection);
+            });
+
+            // Append year row to gallery row
+            galleryRow.appendChild(yearRow);
         });
-    });
-}
 
-function displayImages(folder) {
-    const modalTitle = document.getElementById("galleryModalLabel");
-    modalTitle.textContent = folder.replace(/-/g, " "); // Replace hyphens with spaces
-
-    const galleryImages = document.getElementById("galleryImages");
-    galleryImages.innerHTML = ""; // Clear previous images
-
-    const images = galleryData[folder];
-    images.forEach((image, index) => {
-        const img = document.createElement("img");
-        img.classList.add("img-fluid", "my-2");
-        img.src = `assets/img/gallery/${folder}/${image}`;
-        img.alt = folder;
-
-        galleryImages.appendChild(img);
-
-        // Add the "displayed" class to the first image
-        if (index === 0) {
-            img.classList.add("displayed");
-        }
-    });
-
-    // Open modal
-    $('#galleryModal').modal('show');
-
-    // Initialize previous and next buttons
-    const previousButton = document.getElementById("previousButton");
-    const nextButton = document.getElementById("nextButton");
-    let currentIndex = 0;
-    
-    previousButton.addEventListener("click", () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateImage(currentIndex);
-        }
-    });
-
-    nextButton.addEventListener("click", () => {
-        if (currentIndex < images.length - 1) {
-            currentIndex++;
-            updateImage(currentIndex);
-        }
-    });
-
-    function updateImage(index) {
-        const displayedImage = galleryImages.querySelector(".displayed");
-        if (displayedImage) {
-            displayedImage.classList.remove("displayed");
-        }
-        const images = galleryImages.querySelectorAll("img");
-        images[index].classList.add("displayed");
+        // Attach click event listener to gallery buttons
+        const galleryButtons = document.querySelectorAll(".gallery-start");
+        galleryButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const folder = this.dataset.folder;
+                displayImages(folder);
+            });
+        });
     }
-}
 
+    function displayImages(folder) {
+        const modalTitle = document.getElementById("galleryModalLabel");
+        modalTitle.textContent = folder.replace(/-/g, " "); // Replace hyphens with spaces
+
+        const galleryImages = document.getElementById("galleryImages");
+        galleryImages.innerHTML = ""; // Clear previous images
+
+        const images = galleryData[folder];
+        images.forEach((image, index) => {
+            const img = document.createElement("img");
+            img.classList.add("img-fluid", "my-2");
+            img.src = `assets/img/gallery/${folder}/${image}`;
+            img.alt = folder;
+
+            galleryImages.appendChild(img);
+
+            // Add the "displayed" class to the first image
+            if (index === 0) {
+                img.classList.add("displayed");
+            }
+        });
+
+        // Open modal
+        $('#galleryModal').modal('show');
+
+        // Initialize previous and next buttons
+        const previousButton = document.getElementById("previousButton");
+        const nextButton = document.getElementById("nextButton");
+        let currentIndex = 0;
+
+        previousButton.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateImage(currentIndex);
+            }
+        });
+
+        nextButton.addEventListener("click", () => {
+            if (currentIndex < images.length - 1) {
+                currentIndex++;
+                updateImage(currentIndex);
+            }
+        });
+
+        function updateImage(index) {
+            const displayedImage = galleryImages.querySelector(".displayed");
+            if (displayedImage) {
+                displayedImage.classList.remove("displayed");
+            }
+            const images = galleryImages.querySelectorAll("img");
+            images[index].classList.add("displayed");
+        }
+    }
 
     // Function to close the modal
     function closeModal() {
@@ -1450,11 +1535,10 @@ function displayImages(folder) {
         closeButton.addEventListener("click", closeModal);
     }
 
-
-// Call generateThumbnails function when the page is loaded
-window.onload = generateThumbnails;
-
+    // Call generateThumbnails function when the page is loaded
+    window.onload = generateThumbnails;
 </script>
+
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdn.reflowhq.com/v2/toolkit.min.js" data-reflow-store="160030606" data-testmode="true"></script>
     <script src="assets/js/bs-init-1.js"></script>
