@@ -112,6 +112,7 @@
     box-sizing: border-box; /* Include padding and border in the box's total width and height */
     padding-left: 20px;
     padding-right: 20px;
+    
 }
     .boxed-section:hover {
         border-color: #007bff; /* Change border color on hover */
@@ -142,7 +143,7 @@
 </style>
 
 <h1 class="heading">Gallery</h1>
-<div id="galleryRow" class="row"></div>
+<div id="galleryRow" class="row" style="margin: 30px;"></div>
 
 <div id="galleryModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -1416,7 +1417,8 @@ galleryData = {
 
                 // Create boxed section
                 const boxedSection = document.createElement("div");
-                boxedSection.classList.add("col-sm-12", "col-md-6", "col-lg-4", "col-xl-4", "col-xs-12", "mb-4", "boxed-section");
+                boxedSection.classList.add("col-12", "col-md-6", "col-lg-4", "col-xl-4", "mb-4", "boxed-section"); // Set full width for mobile (col-12), 2 in md (col-md-6), and 3 in lg and xl (col-lg-4, col-xl-4)
+
 
                 // Replace general, trial, var, and exp with empty string and hyphens with spaces
                 const headingText = folder.replace(/general-|trial-flights-|var-|exp-/, "").replace(/-/g, " ");
